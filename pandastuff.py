@@ -13,11 +13,29 @@ this_data = pd.read_csv(
     dtype = {'H1': 'string'}
     )
 
-# Show dataframe basic details
+
+# Inspect and pick through dataframes
+
+print('\nShow dataframe basic details')
 this_data.info()
 
-# Show the header and first few rows
+print('\nShow the header and first few rows')
 print(this_data.head())
 
-# Show unique column values
+print('\nShow unique column values')
 print(this_data['H2'].explode().unique())
+
+print('\nSorted unique values')
+print(sorted(this_data['H2'].explode().unique()))
+
+
+# Selecting rows
+
+print('\nSelect rows matching a particular column value (H2 == \'eight\')')
+print(this_data[this_data['H2'] == 'eight'])
+print('\nSelect rows not matching a particular column value (H2 != \'eight\')')
+print(this_data[this_data['H2'] != 'eight'])
+print('\n')
+print('\n')
+print('\n')
+print('\n')
