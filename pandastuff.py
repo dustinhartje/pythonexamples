@@ -36,6 +36,13 @@ print(this_data[this_data['H2'] == 'eight'])
 print('\nSelect rows not matching a particular column value (H2 != \'eight\')')
 print(this_data[this_data['H2'] != 'eight'])
 print('\n')
+
+# Iterating through rows in a dataframe
+# ref: https://stackoverflow.com/questions/55091244/iterate-through-csv-rows-with-pandas-perform-selenium-action
+
+print('\nIterating through rows to print H1 and H2 for each')
+for r, row in this_data.iterrows():
+    print(f"H1 = {row['H1']} | H2 = {row['H2']}")
 print('\n')
 print('\n')
 print('\n')
