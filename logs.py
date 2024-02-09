@@ -4,6 +4,12 @@
 
 import logging
 
+# TODO update this to include multiple module logging
+#      https://docs.python.org/3/howto/logging.html#logging-from-multiple-modules
+
+# TODO also look into best practices, this article is a good start.  probably
+#      should be using __name__?
+#      https://stackoverflow.com/questions/15727420/using-logging-in-multiple-modules
 
 # Setup logging to console and write a couple things
 # Create a logger object to use, name doesn't really matter I don't think
