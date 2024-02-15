@@ -54,3 +54,5 @@ chart.sort_candles()
 for c in chart.candles:
     print(vars(c))
 
+# Reading and Writing objects to files as json:
+# ...see json.py in this repo
