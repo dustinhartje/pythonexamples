@@ -1,3 +1,15 @@
+#
+#
+#
+#
+# A better example script is available at:
+# https://github.com/mongodb-university/atlas_starter_python/blob/master/atlas-starter.py
+#
+#
+#
+#
+#
+#
 # Copied directly from ChatGPT3.5 results using the following prompt:
 # Write a python script to interact with MongoDB Atlas in AWS.  It should
 # include functions to create a database, crud records that are created from
