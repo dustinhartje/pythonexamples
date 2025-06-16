@@ -3,6 +3,9 @@
 # https://docs.python.org/3/howto/logging.html#logging-advanced-tutorial
 
 import logging
+from log_sub import log_sub
+
+# LOGGING WITH SUBMODULES
 
 # TODO update this to include multiple module logging
 #      https://docs.python.org/3/howto/logging.html#logging-from-multiple-modules
@@ -12,8 +15,20 @@ import logging
 #      https://stackoverflow.com/questions/15727420/using-logging-in-multiple-modules
 
 # Setup logging to console and write a couple things
-# Create a logger object to use, name doesn't really matter I don't think
-log = logging.getLogger('deezlogs')
+# Create a logger object to use, leaving the name as a blank string to denote
+# it as the "root" logger, which all other loggers will child themselves to
+# NOTE - using "__name__" or "explicit_strings" do NOT work with submodules
+# https://stackoverflow.com/questions/70340378
+#        /python-logging-does-not-work-over-modules
+# In other words, don't do this in the parent script:
+# log = logging.getLogger(__name__)
+# or this:
+# log = logging.getLogger("mylogs")
+# Always do this in the parent script:
+log = logging.getLogger('')
+# And libraries can use this to supply their names dynamically in the log:
+# log = logging.getLogger(__name__)
+
 # Set minimum level to include (see ref link for options)
 log.setLevel(logging.INFO)
 # Set log format
@@ -53,3 +68,6 @@ log.info('This is an info level message, no biggie')
 log.warning('This is a warning level message, be careful out there')
 log.error('This is an error level message, please help!')
 log.critical('This is a critical level message, you\'re hair is currently on fire sir')
+
+# Confirm submodule logging works as well
+log_sub.test_submodule_logging()
